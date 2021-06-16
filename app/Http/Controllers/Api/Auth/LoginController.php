@@ -20,7 +20,7 @@ class LoginController extends Controller
         if (!Auth::attempt($credentials)) {
             return response()->json([
                 'message' => 'Невозможно авторизоваться',
-                'errors' => 'Unauthorised'
+                'errors' => 'Unauthorized'
             ], 401);
         }
 

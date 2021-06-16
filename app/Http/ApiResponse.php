@@ -29,7 +29,6 @@ class ApiResponse implements Responsable
     public function toResponse($request)
     {
         if ($request->input('format')=='xml'){
-
             return response()->xml($this->response);
         }
         return response()->json($this->response);
