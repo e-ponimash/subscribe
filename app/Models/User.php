@@ -41,4 +41,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function topics(){
+        return $this->belongsToMany(Topic::class, 'subscriptions', 'user_id','topic_id');
+    }
 }
